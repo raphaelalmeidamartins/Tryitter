@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+using Tryitter.Models;
 
 namespace Tryitter.Model
 {
   public partial class TryitterContext : DbContext
   {
     private readonly IConfiguration _config;
+
+    public DbSet<Image> Images { get; set; } = default!;
 
     public TryitterContext(IConfiguration config)
     {
