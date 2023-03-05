@@ -11,8 +11,8 @@ using Tryitter.Repositories;
 namespace Tryitter.Migrations
 {
     [DbContext(typeof(TryitterContext))]
-    [Migration("20230305021141_CreateImages")]
-    partial class CreateImages
+    [Migration("20230305022626_ChangeImageDataMaxLength")]
+    partial class ChangeImageDataMaxLength
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,6 +38,7 @@ namespace Tryitter.Migrations
 
                     b.Property<byte[]>("Data")
                         .IsRequired()
+                        .HasMaxLength(1048576)
                         .HasColumnType("varbinary(max)");
 
                     b.Property<string>("FileName")
