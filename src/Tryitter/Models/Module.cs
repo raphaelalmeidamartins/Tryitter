@@ -10,5 +10,5 @@ public class Module
   [MaxLength(255)]
   public string Name { get; set; } = default!;
 
-  public ICollection<User> Users { get; set; } = new HashSet<User>();
+  public virtual ICollection<User> Users { get; set; } = new HashSet<User>();
 }

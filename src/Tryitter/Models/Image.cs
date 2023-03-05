@@ -18,5 +18,5 @@ public class Image
   [MaxLength(1048576)]
   public byte[] Data { get; set; } = default!;
 
-  public ICollection<User> Users { get; set; } = new HashSet<User>();
+  public virtual ICollection<User> Users { get; set; } = new HashSet<User>();
 }

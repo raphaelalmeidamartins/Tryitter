@@ -35,4 +35,8 @@ public class User
 
   [StringLength(300)]
   public string Bio { get; set; } = default!;
+
+  public virtual ICollection<UserFollower> Followers { get; set; } = new HashSet<UserFollower>();
+
+  public virtual ICollection<UserFollower> Following { get; set; } = new HashSet<UserFollower>();
 }

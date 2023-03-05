@@ -10,8 +10,10 @@ public partial class TryitterContext : DbContext
   private readonly IConfiguration _config;
 
   public DbSet<Image> Images { get; set; } = default!;
-  public DbSet<User> User { get; set; } = default!;
+  public DbSet<User> Users { get; set; } = default!;
+  public DbSet<UserFollower> UserFollowers { get; set; } = default!;
   public DbSet<Module> Modules { get; set; } = default!;
+  public DbSet<Post> Posts { get; set; } = default!;
 
   public TryitterContext(IConfiguration config)
   {
@@ -35,6 +37,21 @@ public partial class TryitterContext : DbContext
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
     OnModelCreatingPartial(modelBuilder);
+
+    modelBuilder.Entity<UserFollower>()
+                .HasKey(uf => new { uf.FolloweeId, uf.FollowerId });
+
+    modelBuilder.Entity<UserFollower>()
+                .HasOne(uf => uf.Follower)
+                .WithMany(u => u.Following)
+                .HasForeignKey(uf => uf.FollowerId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+    modelBuilder.Entity<UserFollower>()
+                .HasOne(uf => uf.Followee)
+                .WithMany(u => u.Followers)
+                .HasForeignKey(uf => uf.FolloweeId)
+                .OnDelete(DeleteBehavior.Cascade);
   }
 
   partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
