@@ -10,6 +10,8 @@ public partial class TryitterContext : DbContext
   private readonly IConfiguration _config;
 
   public DbSet<Image> Images { get; set; } = default!;
+  public DbSet<User> User { get; set; } = default!;
+  public DbSet<Module> Modules { get; set; } = default!;
 
   public TryitterContext(IConfiguration config)
   {
