@@ -16,7 +16,7 @@ public class TokenGenerator : ITokenGenerator
       Subject = this.AddClaims(user),
       Expires = DateTime.Now.AddDays(1),
       SigningCredentials = new SigningCredentials(
-        new SymmetricSecurityKey(Encoding.ASCII.GetBytes("2d74025e7bcf058897d8daaa99ae99b5")),
+        new SymmetricSecurityKey(Encoding.ASCII.GetBytes("2d8897d8daaa99ae99b574025e7bcf05")),
         SecurityAlgorithms.HmacSha256Signature
       ),
     };
