@@ -20,8 +20,9 @@ public class UserFollowerRepository : IUserFollowerRepository
     var follower = await this._context.Users.FindAsync(dto.FollowerId);
     if (follower == null) throw new ArgumentException($"User with id {dto.FollowerId} not found");
 
-    var isAlreadyFollowing = this._context.UserFollowers.Where(uf => uf.FolloweeId == dto.FolloweeId && uf.FollowerId == dto.FollowerId);
-    if (isAlreadyFollowing != null) throw new ArgumentException("User is already being followed");
+    var isAlreadyFollowing = this._context.UserFollowers.Where(uf => uf.FolloweeId == dto.FolloweeId && uf.FollowerId == dto.FollowerId).Any();
+    if (isAlreadyFollowing != false) throw new ArgumentException("User is already being followed");
+    Console.Write(isAlreadyFollowing);
     
     var userFollower = new UserFollower()
     {
