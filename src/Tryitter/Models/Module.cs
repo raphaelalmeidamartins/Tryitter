@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Tryitter.Models;
 
@@ -10,5 +11,6 @@ public class Module
   [MaxLength(255)]
   public string Name { get; set; } = default!;
 
-  public virtual ICollection<User> Users { get; set; } = new HashSet<User>();
+  [JsonIgnore]
+  public ICollection<User> Users { get; set; } = new HashSet<User>();
 }

@@ -12,6 +12,21 @@ namespace Tryitter.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Images",
+                columns: table => new
+                {
+                    ImageId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FileName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    ContentType = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Data = table.Column<byte[]>(type: "varbinary(max)", maxLength: 1048576, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Images", x => x.ImageId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Modules",
                 columns: table => new
                 {
@@ -25,22 +40,6 @@ namespace Tryitter.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Images",
-                columns: table => new
-                {
-                    ImageId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    FileName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    ContentType = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Data = table.Column<byte[]>(type: "varbinary(max)", maxLength: 1048576, nullable: false),
-                    PostId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Images", x => x.ImageId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
                 {
@@ -48,11 +47,12 @@ namespace Tryitter.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Username = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    ProfilePictureId = table.Column<int>(type: "int", nullable: false),
+                    ProfilePictureId = table.Column<int>(type: "int", nullable: true),
                     PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ModuleId = table.Column<int>(type: "int", nullable: false),
                     Status = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Bio = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false)
+                    Bio = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
+                    IsAdmin = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -61,8 +61,7 @@ namespace Tryitter.Migrations
                         name: "FK_Users_Images_ProfilePictureId",
                         column: x => x.ProfilePictureId,
                         principalTable: "Images",
-                        principalColumn: "ImageId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "ImageId");
                     table.ForeignKey(
                         name: "FK_Users_Modules_ModuleId",
                         column: x => x.ModuleId,
@@ -79,11 +78,18 @@ namespace Tryitter.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Content = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    AuthorId = table.Column<int>(type: "int", nullable: false)
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    AuthorId = table.Column<int>(type: "int", nullable: false),
+                    ImageId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Posts", x => x.PostId);
+                    table.ForeignKey(
+                        name: "FK_Posts_Images_ImageId",
+                        column: x => x.ImageId,
+                        principalTable: "Images",
+                        principalColumn: "ImageId");
                     table.ForeignKey(
                         name: "FK_Posts_Users_AuthorId",
                         column: x => x.AuthorId,
@@ -117,14 +123,14 @@ namespace Tryitter.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Images_PostId",
-                table: "Images",
-                column: "PostId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Posts_AuthorId",
                 table: "Posts",
                 column: "AuthorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Posts_ImageId",
+                table: "Posts",
+                column: "ImageId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserFollowers_FollowerId",
@@ -140,27 +146,16 @@ namespace Tryitter.Migrations
                 name: "IX_Users_ProfilePictureId",
                 table: "Users",
                 column: "ProfilePictureId");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Images_Posts_PostId",
-                table: "Images",
-                column: "PostId",
-                principalTable: "Posts",
-                principalColumn: "PostId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Images_Posts_PostId",
-                table: "Images");
+            migrationBuilder.DropTable(
+                name: "Posts");
 
             migrationBuilder.DropTable(
                 name: "UserFollowers");
-
-            migrationBuilder.DropTable(
-                name: "Posts");
 
             migrationBuilder.DropTable(
                 name: "Users");

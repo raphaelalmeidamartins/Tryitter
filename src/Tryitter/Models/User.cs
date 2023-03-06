@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Tryitter.Models;
 
@@ -16,11 +17,12 @@ public class User
   public string Email { get; set; } = default!;
 
   [ForeignKey("ProfilePictureId")]
-  public int ProfilePictureId { get; set; }
+  public int? ProfilePictureId { get; set; }
 
-  public Image ProfilePicture { get; set; } = default!;
+  public Image? ProfilePicture { get; set; } = default!;
 
   [Required]
+  [JsonIgnore]
   public string PasswordHash { get; set; } = default!;
 
   [Required]
@@ -36,7 +38,14 @@ public class User
   [StringLength(300)]
   public string Bio { get; set; } = default!;
 
-  public virtual ICollection<UserFollower> Followers { get; set; } = new HashSet<UserFollower>();
+  public bool IsAdmin { get; set; } = default!;
 
-  public virtual ICollection<UserFollower> Following { get; set; } = new HashSet<UserFollower>();
+  [JsonIgnore]
+  public ICollection<Post> Posts { get; set; } = new HashSet<Post>();
+
+  [JsonIgnore]
+  public ICollection<UserFollower> Followers { get; set; } = new HashSet<UserFollower>();
+
+  [JsonIgnore]
+  public ICollection<UserFollower> Following { get; set; } = new HashSet<UserFollower>();
 }

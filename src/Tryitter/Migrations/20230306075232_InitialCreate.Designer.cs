@@ -12,7 +12,7 @@ using Tryitter.Repositories;
 namespace Tryitter.Migrations
 {
     [DbContext(typeof(TryitterContext))]
-    [Migration("20230305141818_InitialCreate")]
+    [Migration("20230306075232_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -48,12 +48,7 @@ namespace Tryitter.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<int?>("PostId")
-                        .HasColumnType("int");
-
                     b.HasKey("ImageId");
-
-                    b.HasIndex("PostId");
 
                     b.ToTable("Images");
                 });
@@ -95,9 +90,17 @@ namespace Tryitter.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("ImageId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
                     b.HasKey("PostId");
 
                     b.HasIndex("AuthorId");
+
+                    b.HasIndex("ImageId");
 
                     b.ToTable("Posts");
                 });
@@ -120,6 +123,9 @@ namespace Tryitter.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<bool>("IsAdmin")
+                        .HasColumnType("bit");
+
                     b.Property<int>("ModuleId")
                         .HasColumnType("int");
 
@@ -127,7 +133,7 @@ namespace Tryitter.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ProfilePictureId")
+                    b.Property<int?>("ProfilePictureId")
                         .HasColumnType("int");
 
                     b.Property<string>("Status")
@@ -164,22 +170,21 @@ namespace Tryitter.Migrations
                     b.ToTable("UserFollowers");
                 });
 
-            modelBuilder.Entity("Tryitter.Models.Image", b =>
-                {
-                    b.HasOne("Tryitter.Models.Post", null)
-                        .WithMany("Images")
-                        .HasForeignKey("PostId");
-                });
-
             modelBuilder.Entity("Tryitter.Models.Post", b =>
                 {
                     b.HasOne("Tryitter.Models.User", "Author")
-                        .WithMany()
+                        .WithMany("Posts")
                         .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Tryitter.Models.Image", "Image")
+                        .WithMany("Posts")
+                        .HasForeignKey("ImageId");
+
                     b.Navigation("Author");
+
+                    b.Navigation("Image");
                 });
 
             modelBuilder.Entity("Tryitter.Models.User", b =>
@@ -192,9 +197,7 @@ namespace Tryitter.Migrations
 
                     b.HasOne("Tryitter.Models.Image", "ProfilePicture")
                         .WithMany("Users")
-                        .HasForeignKey("ProfilePictureId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ProfilePictureId");
 
                     b.Navigation("Module");
 
@@ -222,6 +225,8 @@ namespace Tryitter.Migrations
 
             modelBuilder.Entity("Tryitter.Models.Image", b =>
                 {
+                    b.Navigation("Posts");
+
                     b.Navigation("Users");
                 });
 
@@ -230,16 +235,13 @@ namespace Tryitter.Migrations
                     b.Navigation("Users");
                 });
 
-            modelBuilder.Entity("Tryitter.Models.Post", b =>
-                {
-                    b.Navigation("Images");
-                });
-
             modelBuilder.Entity("Tryitter.Models.User", b =>
                 {
                     b.Navigation("Followers");
 
                     b.Navigation("Following");
+
+                    b.Navigation("Posts");
                 });
 #pragma warning restore 612, 618
         }

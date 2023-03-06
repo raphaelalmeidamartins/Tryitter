@@ -7,7 +7,7 @@ namespace Tryitter.Models;
 
 public class Post
 {
-  public int PostId { get; set; }
+  public int PostId { get; private set; }
 
   [Required]
   [StringLength(300)]
@@ -15,9 +15,14 @@ public class Post
 
   public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
+  public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
+
   [ForeignKey("AuthorId")]
   public int AuthorId { get; set; }
   public User Author { get; set; } = default!;
 
-  public ICollection<Image> Images { get; set; } = new List<Image>();
+  [ForeignKey("ImageId")]
+  public int? ImageId { get; set; }
+
+  public Image? Image { get; set; } = default!;
 }
