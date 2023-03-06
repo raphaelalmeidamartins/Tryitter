@@ -42,7 +42,6 @@ public class ModuleController : ControllerBase
   }
 
   [HttpGet]
-  [Authorize]
   public async Task<IActionResult> FindAll()
   {
     try
@@ -58,7 +57,6 @@ public class ModuleController : ControllerBase
   }
 
   [HttpGet("{id}")]
-  [Authorize]
   public async Task<IActionResult> FindById(int id)
   {
     try
@@ -97,6 +95,7 @@ public class ModuleController : ControllerBase
   }
 
   [HttpDelete("{id}")]
+  [Authorize(Policy = "AdminPolicy")]
   public async Task<IActionResult> Destroy(int id)
   {
     try
