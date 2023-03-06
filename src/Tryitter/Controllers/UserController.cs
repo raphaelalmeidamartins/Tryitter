@@ -36,6 +36,7 @@ public class UserController : ControllerBase
     }
     catch (Exception ex)
     {
+      if (ex is ArgumentException) return BadRequest(ex.Message);
       this._logger.LogError(ex, "Error creating user");
       return StatusCode(StatusCodes.Status500InternalServerError);
     }

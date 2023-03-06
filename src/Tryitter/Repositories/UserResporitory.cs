@@ -32,6 +32,12 @@ public class UserRepository : IUserRepository
       throw new ArgumentException($"Email {dto.Email} already in use");
     }
 
+    var existingModule = await this._context.Modules.FindAsync(dto.ModuleId);
+    if (existingModule == null)
+    {
+      throw new ArgumentException($"User was not created because Module with id {dto.ModuleId} was not found");
+    }
+
     var user = new User()
     {
       Username = dto.Username,
@@ -110,6 +116,12 @@ public class UserRepository : IUserRepository
   public async Task<User> Update(int id, UpdateUserDto dto)
   {
     var user = await this.FindById(id);
+
+    var existingModule = await this._context.Modules.FindAsync(dto.ModuleId);
+    if (existingModule == null)
+    {
+      throw new ArgumentException($"User was not updated because Module with id {dto.ModuleId} was not found");
+    }
 
     if (dto.ModuleId != null) user.ModuleId = dto.ModuleId.Value;
     if (dto.Status != null) user.Status = dto.Status;
