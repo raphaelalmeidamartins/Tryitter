@@ -17,11 +17,11 @@ Desenvolvemos uma API para uma rede social estilo Twitter para pessoas estudante
 - Cadastrar Usuário
 - Atualizar informações de usuário
 - Seguir e deixar de seguir outros usuários
-- Criar publicações no estilo de Tweets (com no mâximo 300 caracteres)
+- Criar publicações no estilo de Tweets (com no máximo 300 caracteres)
 
-## Como executar a aplicação :laptop:
+## Como executar a aplicação :computer:
 
-Para executar, é necessârio que você tenha instalado na sua mâquina, o **.NET 6.0**, a **dotnet-cli** e a **dotnet ef cli**. Caso opte pela utilização do container para o banco de dados, também é necessário que você tenha o Docker na versão **20.10.22** (ou superior) e o Docker Compose na versão **2.15.1** (ou superio).
+Para executar, é necessário que você tenha instalado na sua máquina, o **.NET 6.0**, a **dotnet-cli** e a **dotnet ef cli**. Caso opte pela utilização do container para o banco de dados, também é necessário que você tenha o Docker na versão **20.10.22** (ou superior) e o Docker Compose na versão **2.15.1** (ou superio).
 
 ### 1 - Clone o repositório e entre na pasta da aplicação
 
@@ -43,7 +43,7 @@ docker-compose up -d
 cd Tryitter && dotnet restore
 ```
 
-### 4 - Genere o schema do banco de dados
+### 4 - Gere o schema do banco de dados
 
 Observação: caso tenha pulado a etapa 2 (de subir o container), altere a string de conexão `Tryitter_DB` localizada no `appsettings.json`com as credenciais do seu banco antes de executar o comando a baixo.
 
@@ -64,7 +64,6 @@ dotnet run
 ## Credenciais :key:
 
 Ao ser executada, a aplicação populará automaticamente a tabela Modules com os módulos presentes no curso da Trybe e também criará a pessoa usuária administradora.
-
 
 - **Username:** admin
 - **Password:** admin
