@@ -19,6 +19,13 @@ Desenvolvemos uma API para uma rede social estilo Twitter para pessoas estudante
 - Seguir e deixar de seguir outros usuários
 - Criar publicações no estilo de Tweets (com no máximo 300 caracteres)
 
+## Metodologias e Design Patterns :pencil2:
+
+- Code First
+- Reposiroty Pattern
+- Data Transfer Objects (Dtos)
+- Princípios de SOLID
+
 ## Como executar a aplicação :computer:
 
 Para executar, é necessário que você tenha instalado na sua máquina, o **.NET 6.0**, a **dotnet-cli** e a **dotnet ef cli**. Caso opte pela utilização do container para o banco de dados, também é necessário que você tenha o Docker na versão **20.10.22** (ou superior) e o Docker Compose na versão **2.15.1** (ou superio).
