@@ -65,10 +65,9 @@ dotnet run
 
 Ao ser executada, a aplicação populará automaticamente a tabela Modules com os módulos presentes no curso da Trybe e também criará a pessoa usuária administradora.
 
-|---|
-| Username | admin |
-| Password | admin |
-|---|
+
+- **Username:** admin
+- **Password:** admin
 
 Algumas rotas só podem ser acessadas pela pessoa administradora, enquanto outras podem ser acessados pelas pesoas usuárias regulares.
 
