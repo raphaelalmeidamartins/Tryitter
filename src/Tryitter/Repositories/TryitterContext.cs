@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Tryitter.Models;
 
 namespace Tryitter.Repositories;
 
-public partial class TryitterContext : DbContext
+public partial class TryitterContext : DbContext, ITryitterContext
 {
   private readonly IConfiguration _config;
 
@@ -17,13 +15,13 @@ public partial class TryitterContext : DbContext
 
   public TryitterContext(IConfiguration config)
   {
-    _config = config;
+    this._config = config;
   }
 
   public TryitterContext(DbContextOptions<TryitterContext> options, IConfiguration config)
       : base(options)
   {
-    _config = config;
+    this._config = config;
   }
 
   protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
