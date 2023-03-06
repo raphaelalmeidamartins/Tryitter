@@ -1,0 +1,47 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "UserFollower",
+    "dateExported": "2023-03-06T12:55:03.537Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "d01a2e21-86e0-40f3-aac4-63a462b80cd4",
+            "colId": "a3de016d-41fa-401d-9d43-c56378be34a9",
+            "containerId": "",
+            "name": "Follow",
+            "url": "{{baseUrl}}/Follow/3",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-03-06T09:10:28.020Z",
+            "modified": "2023-03-06T09:19:11.447Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjEwMDIiLCJFbWFpbCI6ImJlbHRyYW5hQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjc4MDkzMDYxLCJleHAiOjE2NzgxNzk0NjEsImlhdCI6MTY3ODA5MzA2MX0.bgaA8jb0CTmf_ao7okbesQc-CfgU76xtzgZFinEQSUo"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4aefcbd2-ad17-4cae-9152-47837d833264",
+            "colId": "a3de016d-41fa-401d-9d43-c56378be34a9",
+            "containerId": "",
+            "name": "Unollow",
+            "url": "{{baseUrl}}/Follow/3",
+            "method": "DELETE",
+            "sortNum": 20000,
+            "created": "2023-03-06T09:26:45.380Z",
+            "modified": "2023-03-06T09:27:01.484Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjEwMDIiLCJFbWFpbCI6ImJlbHRyYW5hQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjc4MDkzMDYxLCJleHAiOjE2NzgxNzk0NjEsImlhdCI6MTY3ODA5MzA2MX0.bgaA8jb0CTmf_ao7okbesQc-CfgU76xtzgZFinEQSUo"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Auth",
+    "dateExported": "2023-03-06T12:53:30.100Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "d64a597c-0b51-41c5-9956-d02d5cc7d581",
+            "colId": "42a22620-f196-403a-8a87-d6ab0e72ff67",
+            "containerId": "",
+            "name": "Login",
+            "url": "{{baseUrl}}/Auth",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-03-06T08:37:51.084Z",
+            "modified": "2023-03-06T08:39:05.753Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"Username\": \"admin\",\n  \"Password\": \"admin\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

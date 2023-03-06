@@ -1,0 +1,114 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Module",
+    "dateExported": "2023-03-06T12:54:32.817Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "4b5d1661-861e-435e-9a3b-9bffe02df29f",
+            "colId": "3fdde73c-f693-4ef3-b599-90f470ab9182",
+            "containerId": "",
+            "name": "Create Module",
+            "url": "{{baseUrl}}/Module",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-03-06T08:42:45.679Z",
+            "modified": "2023-03-06T08:44:28.890Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjIiLCJFbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTY3ODA5MjAzOSwiZXhwIjoxNjc4MTc4NDM5LCJpYXQiOjE2NzgwOTIwMzl9.2TlGo_dlH1Uf5qidZfEhxSmcw0UsqNnWJuSUEiRa8K8"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"Name\": \"Aceleração de C#\" \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "675b40ae-142f-4304-9533-5fb73a7b488d",
+            "colId": "3fdde73c-f693-4ef3-b599-90f470ab9182",
+            "containerId": "",
+            "name": "List Modules",
+            "url": "{{baseUrl}}/Module",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-03-06T08:45:48.688Z",
+            "modified": "2023-03-06T08:47:15.893Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjIiLCJFbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTY3ODA5MjAzOSwiZXhwIjoxNjc4MTc4NDM5LCJpYXQiOjE2NzgwOTIwMzl9.2TlGo_dlH1Uf5qidZfEhxSmcw0UsqNnWJuSUEiRa8K8"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "33a456a6-1817-42d1-86b7-70dc5970baba",
+            "colId": "3fdde73c-f693-4ef3-b599-90f470ab9182",
+            "containerId": "",
+            "name": "Get Module By Id",
+            "url": "{{baseUrl}}/Module/1",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-03-06T08:47:39.402Z",
+            "modified": "2023-03-06T08:48:15.160Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjIiLCJFbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTY3ODA5MjAzOSwiZXhwIjoxNjc4MTc4NDM5LCJpYXQiOjE2NzgwOTIwMzl9.2TlGo_dlH1Uf5qidZfEhxSmcw0UsqNnWJuSUEiRa8K8"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a972b4df-672a-46d2-b92e-a02c9593d903",
+            "colId": "3fdde73c-f693-4ef3-b599-90f470ab9182",
+            "containerId": "",
+            "name": "Uodate Module",
+            "url": "{{baseUrl}}/Module/1002",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-03-06T08:51:17.434Z",
+            "modified": "2023-03-06T08:52:44.749Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjIiLCJFbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTY3ODA5MjAzOSwiZXhwIjoxNjc4MTc4NDM5LCJpYXQiOjE2NzgwOTIwMzl9.2TlGo_dlH1Uf5qidZfEhxSmcw0UsqNnWJuSUEiRa8K8"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"Name\": \"Aceleração de Java\" \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "16780d8e-3c5c-4532-a66e-231800e746b1",
+            "colId": "3fdde73c-f693-4ef3-b599-90f470ab9182",
+            "containerId": "",
+            "name": "Delete Module",
+            "url": "{{baseUrl}}/Module/1002",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-03-06T08:53:15.867Z",
+            "modified": "2023-03-06T08:54:13.229Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjIiLCJFbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTY3ODA5MjAzOSwiZXhwIjoxNjc4MTc4NDM5LCJpYXQiOjE2NzgwOTIwMzl9.2TlGo_dlH1Uf5qidZfEhxSmcw0UsqNnWJuSUEiRa8K8"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

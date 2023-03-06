@@ -1,0 +1,163 @@
+{
+    "info": {
+        "name": "Post",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Create Post",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "{{baseUrl}}/Post",
+                    "path": [
+                        "Post"
+                    ],
+                    "host": [
+                        "{{baseurl}}"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjEwMDIiLCJFbWFpbCI6ImJlbHRyYW5hQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjc4MDkzMDYxLCJleHAiOjE2NzgxNzk0NjEsImlhdCI6MTY3ODA5MzA2MX0.bgaA8jb0CTmf_ao7okbesQc-CfgU76xtzgZFinEQSUo"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"authorId\": 1002,\n  \"content\": \"Ultimo projeto da acelração uhull\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Update Post",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "{{baseUrl}}/Post/1",
+                    "path": [
+                        "Post",
+                        "1"
+                    ],
+                    "host": [
+                        "{{baseurl}}"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjEwMDIiLCJFbWFpbCI6ImJlbHRyYW5hQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjc4MDkzMDYxLCJleHAiOjE2NzgxNzk0NjEsImlhdCI6MTY3ODA5MzA2MX0.bgaA8jb0CTmf_ao7okbesQc-CfgU76xtzgZFinEQSUo"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"content\": \"Ultimo projeto da acelração uhuuuuull\"\n}"
+                }
+            }
+        },
+        {
+            "name": "List Posts",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "{{baseUrl}}/Post",
+                    "path": [
+                        "Post"
+                    ],
+                    "host": [
+                        "{{baseurl}}"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjEwMDIiLCJFbWFpbCI6ImJlbHRyYW5hQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjc4MDkzMDYxLCJleHAiOjE2NzgxNzk0NjEsImlhdCI6MTY3ODA5MzA2MX0.bgaA8jb0CTmf_ao7okbesQc-CfgU76xtzgZFinEQSUo"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "List Posts By Author",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "{{baseUrl}}/Post?authorId=1002",
+                    "query": [
+                        {
+                            "key": "authorId",
+                            "value": "1002"
+                        }
+                    ],
+                    "variable": [],
+                    "path": [
+                        "Post"
+                    ],
+                    "host": [
+                        "{{baseurl}}"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjEwMDIiLCJFbWFpbCI6ImJlbHRyYW5hQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjc4MDkzMDYxLCJleHAiOjE2NzgxNzk0NjEsImlhdCI6MTY3ODA5MzA2MX0.bgaA8jb0CTmf_ao7okbesQc-CfgU76xtzgZFinEQSUo"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Get Post By Id",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "{{baseUrl}}/Post/1",
+                    "path": [
+                        "Post",
+                        "1"
+                    ],
+                    "host": [
+                        "{{baseurl}}"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjEwMDIiLCJFbWFpbCI6ImJlbHRyYW5hQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjc4MDkzMDYxLCJleHAiOjE2NzgxNzk0NjEsImlhdCI6MTY3ODA5MzA2MX0.bgaA8jb0CTmf_ao7okbesQc-CfgU76xtzgZFinEQSUo"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Detele Post",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "{{baseUrl}}/Post/1",
+                    "path": [
+                        "Post",
+                        "1"
+                    ],
+                    "host": [
+                        "{{baseurl}}"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjEwMDIiLCJFbWFpbCI6ImJlbHRyYW5hQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjc4MDkzMDYxLCJleHAiOjE2NzgxNzk0NjEsImlhdCI6MTY3ODA5MzA2MX0.bgaA8jb0CTmf_ao7okbesQc-CfgU76xtzgZFinEQSUo"
+                    }
+                ]
+            }
+        }
+    ]
+}

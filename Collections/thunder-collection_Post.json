@@ -1,0 +1,139 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Post",
+    "dateExported": "2023-03-06T12:55:53.400Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "ab883351-bf0e-4565-ae05-cec6d4aa5a43",
+            "colId": "fed29b5f-ad21-4b40-a219-029d17b16f1d",
+            "containerId": "",
+            "name": "Create Post",
+            "url": "{{baseUrl}}/Post",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-03-06T09:30:08.528Z",
+            "modified": "2023-03-06T09:32:27.716Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjEwMDIiLCJFbWFpbCI6ImJlbHRyYW5hQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjc4MDkzMDYxLCJleHAiOjE2NzgxNzk0NjEsImlhdCI6MTY3ODA5MzA2MX0.bgaA8jb0CTmf_ao7okbesQc-CfgU76xtzgZFinEQSUo"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"authorId\": 1002,\n  \"content\": \"Ultimo projeto da acelração uhull\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "50784fcb-3dd2-4adc-ae98-767880c77979",
+            "colId": "fed29b5f-ad21-4b40-a219-029d17b16f1d",
+            "containerId": "",
+            "name": "Update Post",
+            "url": "{{baseUrl}}/Post/1",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2023-03-06T09:34:12.206Z",
+            "modified": "2023-03-06T09:35:11.297Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjEwMDIiLCJFbWFpbCI6ImJlbHRyYW5hQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjc4MDkzMDYxLCJleHAiOjE2NzgxNzk0NjEsImlhdCI6MTY3ODA5MzA2MX0.bgaA8jb0CTmf_ao7okbesQc-CfgU76xtzgZFinEQSUo"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"content\": \"Ultimo projeto da acelração uhuuuuull\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "3ff171fe-fe5a-473e-a60f-9763a82a7a68",
+            "colId": "fed29b5f-ad21-4b40-a219-029d17b16f1d",
+            "containerId": "",
+            "name": "List Posts",
+            "url": "{{baseUrl}}/Post",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-03-06T09:35:19.350Z",
+            "modified": "2023-03-06T09:35:57.966Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjEwMDIiLCJFbWFpbCI6ImJlbHRyYW5hQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjc4MDkzMDYxLCJleHAiOjE2NzgxNzk0NjEsImlhdCI6MTY3ODA5MzA2MX0.bgaA8jb0CTmf_ao7okbesQc-CfgU76xtzgZFinEQSUo"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "424e0add-d456-4e89-bbc9-8832b52c5f5f",
+            "colId": "fed29b5f-ad21-4b40-a219-029d17b16f1d",
+            "containerId": "",
+            "name": "List Posts By Author",
+            "url": "{{baseUrl}}/Post?authorId=1002",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-03-06T09:36:10.021Z",
+            "modified": "2023-03-06T09:36:43.881Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjEwMDIiLCJFbWFpbCI6ImJlbHRyYW5hQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjc4MDkzMDYxLCJleHAiOjE2NzgxNzk0NjEsImlhdCI6MTY3ODA5MzA2MX0.bgaA8jb0CTmf_ao7okbesQc-CfgU76xtzgZFinEQSUo"
+                }
+            ],
+            "params": [
+                {
+                    "name": "authorId",
+                    "value": "1002",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "9760c2a9-0af0-48dd-bb54-187cc56e472d",
+            "colId": "fed29b5f-ad21-4b40-a219-029d17b16f1d",
+            "containerId": "",
+            "name": "Get Post By Id",
+            "url": "{{baseUrl}}/Post/1",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2023-03-06T09:36:49.047Z",
+            "modified": "2023-03-06T09:37:17.788Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjEwMDIiLCJFbWFpbCI6ImJlbHRyYW5hQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjc4MDkzMDYxLCJleHAiOjE2NzgxNzk0NjEsImlhdCI6MTY3ODA5MzA2MX0.bgaA8jb0CTmf_ao7okbesQc-CfgU76xtzgZFinEQSUo"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1720c597-77b2-4fdc-9e0d-a45dc54bc0b9",
+            "colId": "fed29b5f-ad21-4b40-a219-029d17b16f1d",
+            "containerId": "",
+            "name": "Detele Post",
+            "url": "{{baseUrl}}/Post/1",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2023-03-06T09:37:30.092Z",
+            "modified": "2023-03-06T09:37:51.402Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjEwMDIiLCJFbWFpbCI6ImJlbHRyYW5hQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjc4MDkzMDYxLCJleHAiOjE2NzgxNzk0NjEsImlhdCI6MTY3ODA5MzA2MX0.bgaA8jb0CTmf_ao7okbesQc-CfgU76xtzgZFinEQSUo"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

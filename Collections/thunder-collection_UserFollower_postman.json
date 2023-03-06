@@ -1,0 +1,53 @@
+{
+    "info": {
+        "name": "UserFollower",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Follow",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "{{baseUrl}}/Follow/3",
+                    "path": [
+                        "Follow",
+                        "3"
+                    ],
+                    "host": [
+                        "{{baseurl}}"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjEwMDIiLCJFbWFpbCI6ImJlbHRyYW5hQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjc4MDkzMDYxLCJleHAiOjE2NzgxNzk0NjEsImlhdCI6MTY3ODA5MzA2MX0.bgaA8jb0CTmf_ao7okbesQc-CfgU76xtzgZFinEQSUo"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Unollow",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "{{baseUrl}}/Follow/3",
+                    "path": [
+                        "Follow",
+                        "3"
+                    ],
+                    "host": [
+                        "{{baseurl}}"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjEwMDIiLCJFbWFpbCI6ImJlbHRyYW5hQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjc4MDkzMDYxLCJleHAiOjE2NzgxNzk0NjEsImlhdCI6MTY3ODA5MzA2MX0.bgaA8jb0CTmf_ao7okbesQc-CfgU76xtzgZFinEQSUo"
+                    }
+                ]
+            }
+        }
+    ]
+}

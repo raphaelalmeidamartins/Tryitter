@@ -1,0 +1,135 @@
+{
+    "info": {
+        "name": "Module",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Create Module",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "{{baseUrl}}/Module",
+                    "path": [
+                        "Module"
+                    ],
+                    "host": [
+                        "{{baseurl}}"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjIiLCJFbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTY3ODA5MjAzOSwiZXhwIjoxNjc4MTc4NDM5LCJpYXQiOjE2NzgwOTIwMzl9.2TlGo_dlH1Uf5qidZfEhxSmcw0UsqNnWJuSUEiRa8K8"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"Name\": \"Aceleração de C#\" \n}"
+                }
+            }
+        },
+        {
+            "name": "List Modules",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "{{baseUrl}}/Module",
+                    "path": [
+                        "Module"
+                    ],
+                    "host": [
+                        "{{baseurl}}"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjIiLCJFbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTY3ODA5MjAzOSwiZXhwIjoxNjc4MTc4NDM5LCJpYXQiOjE2NzgwOTIwMzl9.2TlGo_dlH1Uf5qidZfEhxSmcw0UsqNnWJuSUEiRa8K8"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Get Module By Id",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "{{baseUrl}}/Module/1",
+                    "path": [
+                        "Module",
+                        "1"
+                    ],
+                    "host": [
+                        "{{baseurl}}"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjIiLCJFbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTY3ODA5MjAzOSwiZXhwIjoxNjc4MTc4NDM5LCJpYXQiOjE2NzgwOTIwMzl9.2TlGo_dlH1Uf5qidZfEhxSmcw0UsqNnWJuSUEiRa8K8"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Uodate Module",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "{{baseUrl}}/Module/1002",
+                    "path": [
+                        "Module",
+                        "1002"
+                    ],
+                    "host": [
+                        "{{baseurl}}"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjIiLCJFbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTY3ODA5MjAzOSwiZXhwIjoxNjc4MTc4NDM5LCJpYXQiOjE2NzgwOTIwMzl9.2TlGo_dlH1Uf5qidZfEhxSmcw0UsqNnWJuSUEiRa8K8"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"Name\": \"Aceleração de Java\" \n}"
+                }
+            }
+        },
+        {
+            "name": "Delete Module",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "{{baseUrl}}/Module/1002",
+                    "path": [
+                        "Module",
+                        "1002"
+                    ],
+                    "host": [
+                        "{{baseurl}}"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjIiLCJFbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTY3ODA5MjAzOSwiZXhwIjoxNjc4MTc4NDM5LCJpYXQiOjE2NzgwOTIwMzl9.2TlGo_dlH1Uf5qidZfEhxSmcw0UsqNnWJuSUEiRa8K8"
+                    }
+                ]
+            }
+        }
+    ]
+}
