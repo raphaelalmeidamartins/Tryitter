@@ -77,6 +77,14 @@ Ao ser executada, a aplicação populará automaticamente a tabela Modules com o
 
 Algumas rotas só podem ser acessadas pela pessoa administradora, enquanto outras podem ser acessados pelas pesoas usuárias regulares.
 
+## Testes :test_tube:
+
+Para executar os testes, navegue até a pasta Trytter.Test e execute o comando abaixo nela.
+
+```sh
+dotnet test
+```
+
 ## Rotas e documentação :memo:
 
 Acesse o endereço que a aplicação estará executando em sua máquina (aparecerá nos logs do terminal) e vá para a rota `/swagger` para visualizar os detalhes dos endpoints.
