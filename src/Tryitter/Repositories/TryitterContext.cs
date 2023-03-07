@@ -101,5 +101,4 @@ public partial class TryitterContext : DbContext, ITryitterContext
       throw new Exception("Error seeding the database", ex);
     }
   }
-
 }
