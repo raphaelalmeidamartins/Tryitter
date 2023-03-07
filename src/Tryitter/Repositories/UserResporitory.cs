@@ -49,22 +49,6 @@ public class UserRepository : IUserRepository
       IsAdmin = false,
     };
 
-    if (dto.ProfilePicture != null)
-    {
-      var profilePictureData = await ImageDecoder.GetFileData(dto.ProfilePicture);
-      var image = new Image()
-      {
-        FileName = dto.ProfilePicture.FileName,
-        ContentType = dto.ProfilePicture.ContentType,
-        Data = profilePictureData,
-      };
-      await this._context.Images.AddAsync(image);
-      await this._context.SaveChangesAsync();
-
-      user.ProfilePicture = image;
-      user.ProfilePictureId = image.ImageId;
-    }
-
     await this._context.Users.AddAsync(user);
     await this._context.SaveChangesAsync();
 
@@ -130,22 +114,6 @@ public class UserRepository : IUserRepository
     if (dto.Password != null)
     {
       user.PasswordHash = await PasswordHasher.HashPasswordAsync(dto.Password);
-    }
-
-    if (dto.ProfilePicture != null)
-    {
-      var profilePictureData = await ImageDecoder.GetFileData(dto.ProfilePicture);
-      var image = new Image()
-      {
-        FileName = dto.ProfilePicture.FileName,
-        ContentType = dto.ProfilePicture.ContentType,
-        Data = profilePictureData,
-      };
-      await this._context.Images.AddAsync(image);
-      await this._context.SaveChangesAsync();
-
-      user.ProfilePicture = image;
-      user.ProfilePictureId = image.ImageId;
     }
 
     await this._context.SaveChangesAsync();

@@ -25,8 +25,6 @@ namespace Tryitter.Dtos.User
 
     [StringLength(300)]
     public string Bio { get; set; } = default!;
-
-    public IFormFile? ProfilePicture { get; set; } = default!;
   }
   public class UpdateUserDto
   {
@@ -39,8 +37,6 @@ namespace Tryitter.Dtos.User
 
     [StringLength(300)]
     public string? Bio { get; set; }
-
-    public IFormFile? ProfilePicture { get; set; } = default!;
   }
 
   public class FindManyUsersDto

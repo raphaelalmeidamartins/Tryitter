@@ -224,19 +224,6 @@ namespace Tryitter.Test.Dtos
     }
 
     [Fact]
-    public void UpdateUserDto_ProfilePicture_ShouldAllowNull()
-    {
-      // Arrange
-      var property = typeof(UpdateUserDto).GetProperty(nameof(UpdateUserDto.ProfilePicture));
-
-      // Act
-      var attribute = property?.GetCustomAttribute<RequiredAttribute>();
-
-      // Assert
-      attribute.Should().BeNull();
-    }
-
-    [Fact]
     public void FindManyUsersDto_ModuleId_CanBeNull()
     {
       // Arrange

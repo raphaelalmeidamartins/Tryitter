@@ -16,11 +16,6 @@ public class User
   [StringLength(50)]
   public string Email { get; set; } = default!;
 
-  [ForeignKey("ProfilePictureId")]
-  public int? ProfilePictureId { get; set; }
-
-  public Image? ProfilePicture { get; set; } = default!;
-
   [Required]
   [JsonIgnore]
   public string PasswordHash { get; set; } = default!;
