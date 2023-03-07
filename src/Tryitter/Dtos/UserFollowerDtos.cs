@@ -4,7 +4,9 @@ namespace Tryitter.Dtos.UserFollower
 {
   public class CreateUserFollowerDto
   {
+    [Required]
     public int FolloweeId { get; set; }
+    [Required]
     public int FollowerId { get; set; }
   }
   public class UpdateUserFollowerDto
@@ -17,7 +19,10 @@ namespace Tryitter.Dtos.UserFollower
 
   public class UserFollowerIdDto
   {
+
+    [Required]
     public int FolloweeId { get; set; }
+    [Required]
     public int FollowerId { get; set; }
   }
 }
