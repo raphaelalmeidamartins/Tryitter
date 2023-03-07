@@ -22,7 +22,6 @@ namespace Tryitter.Test.Models
       image.FileName.Should().BeNull();
       image.ContentType.Should().BeNull();
       image.Data.Should().BeNull();
-      image.Users.Should().NotBeNull().And.BeEmpty();
       image.Posts.Should().NotBeNull().And.BeEmpty();
     }
 
@@ -109,18 +108,6 @@ namespace Tryitter.Test.Models
       attribute.Should().NotBeNull().And.HaveCount(1);
       attribute.Should().BeOfType<MaxLengthAttribute[]>()
           .Which[0].Length.Should().Be(1048576);
-    }
-
-    [Fact]
-    public void Image_Users_ShouldBeEmptyCollection()
-    {
-      // Arrange
-      var image = new Image();
-
-      // Act
-
-      // Assert
-      image.Users.Should().NotBeNull().And.BeEmpty();
     }
 
     [Fact]
