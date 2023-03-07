@@ -85,6 +85,10 @@ Para executar os testes, navegue até a pasta Trytter.Test e execute o comando a
 dotnet test
 ```
 
+Você pode conferir o relatório de cobertura em html que está localizado em `Tryitter.Test/coverate_report/index.html`. Até o momento cerca de 40% do código está coberto por testes, pretendo continuar testando a†é atingir 100%.
+
+![Coverage](./Coverage.png)
+
 ## Rotas e documentação :memo:
 
 Acesse o endereço que a aplicação estará executando em sua máquina (aparecerá nos logs do terminal) e vá para a rota `/swagger` para visualizar os detalhes dos endpoints.
