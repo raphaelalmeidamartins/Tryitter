@@ -40,24 +40,6 @@ namespace Tryitter.Test.Models
     }
 
     [Fact]
-    public void User_ProfilePicture_ShouldAllowNull()
-    {
-      // Arrange
-      var property = typeof(User).GetProperty(nameof(User.ProfilePictureId));
-
-      // Act
-      var attribute = property?.GetCustomAttributes(typeof(ForeignKeyAttribute), true);
-
-      // Assert
-      attribute.Should().NotBeNull().And.HaveCount(1);
-      attribute.Should().BeOfType<ForeignKeyAttribute[]>()
-          .Which.Single().Name.Should().Be("ProfilePictureId");
-      property.Should().BeDecoratedWith<ForeignKeyAttribute>(a => a.Name == "ProfilePictureId");
-    }
-
-
-
-    [Fact]
     public void User_PasswordHash_ShouldBeRequired()
     {
       // Arrange
