@@ -13,6 +13,7 @@ namespace Tryitter.Migrations
 {
     [DbContext(typeof(TryitterContext))]
     [Migration("20230306075232_InitialCreate")]
+
     partial class InitialCreate
     {
         /// <inheritdoc />

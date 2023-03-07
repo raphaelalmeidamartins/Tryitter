@@ -5,11 +5,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tryitter.Repositories;
+using System.Diagnostics.CodeAnalysis;
 
 #nullable disable
 
 namespace Tryitter.Migrations
 {
+    [ExcludeFromCodeCoverage]
     [DbContext(typeof(TryitterContext))]
     partial class TryitterContextModelSnapshot : ModelSnapshot
     {
